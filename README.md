@@ -1,4 +1,4 @@
-# ESP8266 MQTT door controller with position sense input on serial port pin
+# ESP8266 MQTT Door Controller with Position Sense
 
 ```
   https://github.com/rstms/esp8266-mqtt-door-controller
@@ -11,6 +11,7 @@
   pubsubclient Library Basic ESP8266 MQTT example:
   https://github.com/knolleary/pubsubclient/blob/master/examples/mqtt_esp8266/mqtt_esp8266.ino
   Copyright (c) 2008-2015 Nicholas O'Leary
+  MIT License 
 ```
 
 ### Function
