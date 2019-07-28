@@ -1,32 +1,48 @@
 # ESP8266 MQTT door controller with position sense input on serial port pin
 
+```
   https://github.com/rstms/esp8266-mqtt-door-controller
   Copyright (c) 2019 Matt Krueger
   MIT License 
-
-  Derived from pubsubclient Library Basic ESP8266 MQTT example:
+```
+ 
+#### Derived from:
+```
+  pubsubclient Library Basic ESP8266 MQTT example:
   https://github.com/knolleary/pubsubclient/blob/master/examples/mqtt_esp8266/mqtt_esp8266.ino
   Copyright (c) 2008-2015 Nicholas O'Leary
+```
 
 ### Function
+
  - Connects to MQTT server
  - Pulses garage door switch on command
  - Publishes door closed sensor state
 
 ### MQTT Subscribes: 
+
    TOPIC/button
+
    TOPIC/state_enable
    
 ### MQTT Publishes:
+
    TOPIC/startup (on init)
+
    TOPIC/button (returns to 0 after 200ms pulse when set to 1)
+
    TOPIC/state_enable (initializes to 1)
+
    TOPIC/state (transmitted every 2 seconds when state_enable==1)
    
 ### serial-port-sensor
+
    Disable Serial Port I/O - instead use serial port to sense door switch
+
    (connect door switch between GND and RX pins)
+
    set RX as INPUT_PULLUP
+
    read RX value as status - 0 == RX is shorted to GND
 
 ### Hardware
