@@ -14,36 +14,29 @@
 ```
 
 ### Function
-
  - Connects to MQTT server
  - Pulses garage door switch on command
  - Publishes door closed sensor state
 
 ### MQTT Subscribes: 
-
-   TOPIC/button
-
-   TOPIC/state_enable
+```
+TOPIC/button
+TOPIC/state_enable
+```
    
 ### MQTT Publishes:
-
-   TOPIC/startup (on init)
-
-   TOPIC/button (returns to 0 after 200ms pulse when set to 1)
-
-   TOPIC/state_enable (initializes to 1)
-
-   TOPIC/state (transmitted every 2 seconds when state_enable==1)
+```
+TOPIC/startup (on init)
+TOPIC/button (returns to 0 after 200ms pulse when set to 1)
+TOPIC/state_enable (initializes to 1)
+TOPIC/state (transmitted every 2 seconds when state_enable==1)
+```
    
-### serial-port-sensor
-
-   Disable Serial Port I/O - instead use serial port to sense door switch
-
-   (connect door switch between GND and RX pins)
-
-   set RX as INPUT_PULLUP
-
-   read RX value as status - 0 == RX is shorted to GND
+### Serial Port Sensor Input
+   - Disable Serial Port I/O - instead use serial port to sense door switch
+   - Connect door switch between GND and RX pins
+   - Set RX as INPUT_PULLUP
+   - Read RX value as status - 0 == RX is shorted to GND
 
 ### Hardware
 Tested with LinkSprite's LinkNode R4 but should work with any ESP8266 relay board with modifications to the GPIO pins used. 
